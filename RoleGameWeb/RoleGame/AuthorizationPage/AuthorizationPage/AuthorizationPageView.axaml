@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:RoleGameAndroid.AuthorizationPage"
+             xmlns:auth="clr-namespace:RoleGameAndroid.AuthorizationPage"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+             x:Class="RoleGameAndroid.AuthorizationPage.AuthorizationPageView"
+             x:DataType="auth:AuthorizationViewModel" Background="Black">
+  <UserControl.DataContext>
+    <vm:AuthorizationPageViewModel/>
+  </UserControl.DataContext>
+
+    <!--<UserControl.Styles>
+        <Style Selector="TextBox.TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Margin" Value="12 16 12 0" />
+        </Style>
+    </UserControl.Styles>-->
+
+    <Grid ColumnDefinitions="*" RowDefinitions="*" VerticalAlignment="Center">
+        <TextBlock Name="Block"></TextBlock>
+        <Image Source="avares://RoleGameWeb/Assets/Images/mainBackgroud.jpg" Opacity="0.6" Stretch="UniformToFill" />
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <TextBlock Name="LogoName" Text="RoleGame" Classes="LogoText" Foreground="White"
+                       HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <UserControl Content="{Binding CurrentControl}"></UserControl>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

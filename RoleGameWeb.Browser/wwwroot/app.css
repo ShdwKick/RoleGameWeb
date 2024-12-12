@@ -1,0 +1,91 @@
+﻿/* HTML styles for the splash screen */
+.avalonia-splash {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    font-family: 'Outfit', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    pointer-events: none;
+}
+
+/* Light theme styles */
+@media (prefers-color-scheme: light) {
+    .avalonia-splash {
+        background: white;
+    }
+
+    .avalonia-splash h2 {
+        color: #1b2a4e;
+    }
+
+    .avalonia-splash a {
+        color: #0D6EFD;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .avalonia-splash {
+        background: #1b2a4e;
+    }
+
+    .avalonia-splash h2 {
+        color: white;
+    }
+
+    .avalonia-splash a {
+        color: white;
+    }
+}
+
+.avalonia-splash h2 {
+    font-weight: 400;
+    font-size: 3.5rem;
+}
+
+.avalonia-splash a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    display: block;
+}
+
+.avalonia-splash.splash-close {
+    transition: opacity 200ms, display 200ms;
+    display: none;
+    opacity: 0;
+}
+
+
+
+.loading-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.loading-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-icon {
+    width: 64px;
+    height: 64px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:CustomControl" Background="Transparent"
+             mc:Ignorable="d" Width="500" Height="440"
+             x:Class="RoleGameAndroid.AuthorizationPage.AuthorizationView">
+    <Grid RowDefinitions="*" ColumnDefinitions="*">
+        <Border CornerRadius="16" Background="White" Opacity="0.4"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="32" FontWeight="Bold" Margin="0,0,0,12"/>
+            <controls:CustomTextBox Label="Ник" Text="{Binding DataContext.UserName, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}"
+                                    LabelFontSize="12" IsRequired="True" Margin="25,0,25,12"/>
+            <controls:CustomTextBox Label="Пароль" Text="{Binding DataContext.Password, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Mode=TwoWay}"
+                                    LabelFontSize="12" IsRequired="True" IsPassword="True" Margin="25,0,25,12"/>
+
+            <Button Width="256" Height="48" Classes="Auth">
+                <Grid>
+                    <Border Padding="0" Classes="Auth">
+                        <Image Source="avares://RoleGameWeb/Assets/Images/dragonAttack.jpg" Stretch="Fill" Opacity="0.6"/>
+                    </Border>
+                    <TextBlock Text="Войти" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+                </Grid>
+            </Button>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Нет аккаунта?" FontSize="12" Padding="0,7,0,0"/>
+                <HyperlinkButton Content="тебе сюда" FontSize="12" Command="{Binding SwitchPageCommand}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+    
+</UserControl>
